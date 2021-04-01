@@ -1,23 +1,23 @@
-const express = require("express")
+let mysql = require("mysql");
 const inquirer = require("inquirer");
-const mysql = require("mysql");
 const table = require("console.table");
 //create connection
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "",
-    database: "employeeDB"
+    port: 3306,
+    password: 'Password1',
+    database: "employeeDB",
+
 });
 
 //connect to MySql
-connection.connect(err => {
-    if(err) {
-        throw err;
-    }
-    //when connected: console log? display info??
-    employeeDetails();
+connection.connect((err) => {
+    if (err) 
+      throw err;
+      employeeDetails();
 });
+
 
 const employeeDetails = () => {
     inquirer
@@ -84,7 +84,7 @@ const viewEmployees = () => {
         console.log(res);
 
         console.table(res);
-        emmployeeInfo();
+        employeeDetails();
         
     });
 };
@@ -99,7 +99,7 @@ const viewDepartments = () => {
     connections.query(query, (err, res) => {
         if (err) throw err;
         console.table(res);
-        employeeInfo();
+        employeeDetails();
     });
 };
 
@@ -115,7 +115,7 @@ const viewRoles = () => {
     connection.query(query, (err, res) => {
         if (err) throw err;
         console.table(res);
-        employeeInfo();
+        employeeDetails();
     });
 }
 const addEmployee = () => {
@@ -156,7 +156,7 @@ const addEmployee = () => {
                 (err) => {
                     if (err) throw err;
                     console.log(`${newEmployee.firstName} ${newEmployee.lastName} has been added`);
-                    empoloyeeInfo();
+                    employeeDetails();
                 }
             );
         });
@@ -178,7 +178,7 @@ const addDepartment = () => {
             (err) => {
             if (err) throw err;
             console.log(`${newDep.depName } has been added`);
-            employeeInfo();
+            employeeDetails();
         });
     });
 };
@@ -210,7 +210,7 @@ const addRole = () => {
           (err) => {
             if (err) throw err;
             console.log(`${newRole.roleTitle} has been added`);
-            employeeInfo();
+            employeeDetails();
           }
         );
       });
@@ -278,7 +278,7 @@ const addRole = () => {
                       if (err) throw err;
   
                       console.log(`${selectedEmployee.toUpperCase()}'S ROLE HAS BEEN UPDATED TO ${selectedRole.toUpperCase()}`);
-                        employeeInfo();
+                      employeeDetails();
                     }
                   );
                 });

@@ -1,25 +1,26 @@
 {
-  "name": "employee_generator",
+  "name": "employee_tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Employee Tracker allows employers to track their employees.  It gives the ability to add/view employees roles, and departments in a MySQL database.  It also gives the option to update the employee's roles",
   "main": "index.js",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "express": "^4.17.1",
+    "flexqp": "^2.2.1",
+    "inquirer": "^8.0.0",
+    "mysql": "^2.18.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/latuanja/Employee_Generator.git"
+    "url": "git+https://github.com/latuanja/Employee_Tracker.git"
   },
-  "author": "",
+  "author": "Latuanja Carson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/latuanja/Employee_Generator/issues"
+    "url": "https://github.com/latuanja/Employee_Tracker/issues"
   },
-  "homepage": "https://github.com/latuanja/Employee_Generator#readme",
-  "dependencies": {
-    "console.table": "^0.10.0",
-    "express": "^4.17.1",
-    "inquirer": "^8.0.0",
-    "mysql": "^2.18.1"
-  }
+  "homepage": "https://github.com/latuanja/Employee_Tracker#readme"
 }
