@@ -7,7 +7,8 @@ Employee Tracker allows employers to track their employees.  It gives the abilit
 ## Inquirer
 ## Node.js
 
-GitHub Repo: 
+GitHub Repo: https://github.com/latuanja/Employee_Tracker
+
 # MIT License
 
 Copyright (c) 2021 Latuanja Carson
