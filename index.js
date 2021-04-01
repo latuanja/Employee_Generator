@@ -39,7 +39,7 @@ const employeeDetails = () => {
         .then((answers) => {
             switch (answers.selection) {
                 case "View Employees":
-                    viewEmployees();
+                    viewAllEmployees();
                     break;
                 case "View Roles":
                     viewRoles();
@@ -66,7 +66,7 @@ const employeeDetails = () => {
         });
 
 };
-const viewEmployees = () => {
+const viewAllEmployees = () => {
     console.log("Employees");
     
     const query = `SELECT
