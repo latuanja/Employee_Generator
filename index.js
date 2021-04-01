@@ -134,8 +134,8 @@ const addEmployee = () => {
             },
             {
                 name: 'employeeRole',
-                type: 'input',
-                message: 'Enter employee role',
+                type: 'number',
+                message: 'Enter employee role id',
             }
         ])
         .then((answers) => {
@@ -145,7 +145,7 @@ const addEmployee = () => {
                 role: answers.employeeRole,
             };
             const query = 
-                "INSERT INTO employees (first_name, last_name, role_id, manager_id) Values (?, ?, ?, ?)";
+                "INSERT INTO employees (first_name, last_name, role_id) Values (?, ?, ?)";
             connection.query(
                 query,
                 [
